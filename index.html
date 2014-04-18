@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en" x-ng-app>
+<head>
+    <title>James' TicTacToe</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js
+    "></script>
+    <script type="text/javascript" src=""></script>
+    <script type="text/javascript" src="script.js"></script>
+</head>
+
+<body x-ng-controller="TicTacController">
+    <header><span>The Original</span><br>Tic Tac Toe</header>
+        <div class="container">
+            <div class="row" x-ng-repeat="r in rows track by $index">
+                <div class="col" x-ng-repeat="col in r track by $index" x-ng-click="makeMove($parent.$index, $index)">
+                    {{ col }}
+                </div>
+            </div>
+        </div>
+</body>
+</html>
