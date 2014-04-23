@@ -12,9 +12,9 @@
 <body x-ng-controller="TicTacController">
     <header><span>The Original</span><br>Tic Tac Toe</header>
         <div class="container">
-            <div class="row" x-ng-repeat="r in rows track by $index">
-                <div class="col" x-ng-repeat="col in r track by $index" x-ng-click="makeMove($parent.$index, $index)">
-                    {{ col }}
+            <div class="columns" x-ng-repeat="c in columns track by $index">
+                <div class="cell" x-ng-repeat="cell in c track by $index" x-ng-click="makeMove($parent.$index, $index)">
+                    {{ cell }}
                 </div>
             </div>
         </div>

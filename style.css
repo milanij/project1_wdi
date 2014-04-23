@@ -15,20 +15,22 @@ span {
 }
 
 .container {
-    width: 100%;
-    text-align: center;
+    width: 324px;
+    margin: 0 auto;
 }
 
-.row {
+.columns {
     display: inline-block;
 }
 
-.col {
+.cell {
     background-color: #666666;
     height:100px;
     width:100px;
     border:4px solid white;
-    font-size: 14px;
+    font-size: 85px;
+    color: white;
+    verticle-align: center;
 
 }
 
