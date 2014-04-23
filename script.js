@@ -16,16 +16,43 @@ whoGoesFirst( );
 
 
 function TicTacController($scope) {
-     $scope.columns = [ [ '','','' ], [ '','','' ], [ '', '', '' ] ];
+     $scope.cells = [' ',' ',' ',' ',' ',' ',' ',' ',' '];
      $scope.isXTurn = true;
 
-     $scope.makeMove = function(c, cell) {
+     $scope.makeMove = function(c) {
 
-            $scope.columns[c] [cell] = $scope.isXTurn? 'X' : 'O';
+            $scope.cells[c] = $scope.isXTurn? 'X' : 'O';
             $scope.isXTurn = !$scope.isXTurn;
 
+            $scope.storeVar = function(c) {
+                    for
+                    xArray[i] = c
+
+            }
+
+            var xArray = [ ];
+            var yArray = [ ];
+
+
     };
+
+    $scope.checkCell = function( ) {
+
+    }
+
+
+
+
+
+
+
+
 }
+
+
+
+
+
 
 
 

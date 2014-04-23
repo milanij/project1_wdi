@@ -12,10 +12,8 @@
 <body x-ng-controller="TicTacController">
     <header><span>The Original</span><br>Tic Tac Toe</header>
         <div class="container">
-            <div class="columns" x-ng-repeat="c in columns track by $index">
-                <div class="cell" x-ng-repeat="cell in c track by $index" x-ng-click="makeMove($parent.$index, $index)">
-                    {{ cell }}
-                </div>
+            <div class="cells" x-ng-repeat="c in cells track by $index" x-ng-click="makeMove($index)">
+                {{ c }}
             </div>
         </div>
 </body>
