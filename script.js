@@ -23,55 +23,61 @@ function TicTacController($scope) {
                 if($scope.cells[u] === ' ') {
                     $scope.cells[u] = $scope.isXTurn? 'X' : 'O';
                     $scope.isXTurn = !$scope.isXTurn;
-                }
                     turnNum ++;
+                    var winArray = [8, 1, 6, 3, 5, 7, 4, 9, 2];
+
+                }
                     console.log("Turn Number " + turnNum);
                     console.log($scope.cells);
                     $scope.winCheck( );
                     $scope.tieCheck( );
     };
 
+// 8 | 1 | 6
+// 3 | 5 | 7
+// 4 | 9 | 2
+
         $scope.winCheck = function( ) {
             if( turnNum >= 5 ) {
                     console.log("winCheck is running.");
-                    if ($scope.cells[0] === 'X' || $scope.cells[0] === 'O') {
+                    if ($scope.cells[0] === 'X' || $scope.cells[0] === 'O' || $scope.cells[0] === ' ') {
                         if($scope.cells[0]+$scope.cells[1]+$scope.cells[2] === 'XXX' || $scope.cells[0]+$scope.cells[3]+$scope.cells[6] === 'XXX' || $scope.cells[0]+$scope.cells[4]+$scope.cells[8] === 'XXX') {
-                            alert("X wins!");
+                            console.log("X wins!");
                         }
                         else if($scope.cells[0]+$scope.cells[1]+$scope.cells[2] === 'OOO' || $scope.cells[0]+$scope.cells[3]+$scope.cells[6] === 'OOO' || $scope.cells[0]+$scope.cells[4]+$scope.cells[8] === 'OOO') {
-                            alert("O wins!");
+                            console.log("O wins!");
                         }
                     }
-                    else if ($scope.cells[1] === 'X' || $scope.cells[1] === 'O') {
+                    if ($scope.cells[1] === 'X' || $scope.cells[1] === 'O' || $scope.cells[1] === ' ') {
                         if($scope.cells[1]+$scope.cells[4]+$scope.cells[7] === 'XXX') {
-                            alert("X wins!");
+                            console.log("X wins!");
                         }
                         else if($scope.cells[1]+$scope.cells[4]+$scope.cells[7] === 'OOO') {
-                            alert("O wins!");
+                            console.log("O wins!");
                         }
                     }
-                    else if ($scope.cells[2] === 'X' || $scope.cells[2] === 'O') {
-                        if($scope.cells[2]+$scope.cells[5]+$scope.cells[8] === 'XXX') {
-                            alert("X wins!");
+                    if ($scope.cells[2] === 'X' || $scope.cells[2] === 'O' || $scope.cells[2] === ' ') {
+                        if($scope.cells[2]+$scope.cells[5]+$scope.cells[8] === 'XXX' || $scope.cells[2]+$scope.cells[4]+$scope.cells[6] === 'XXX') {
+                            console.log("X wins!");
                         }
-                        else if($scope.cells[2]+$scope.cells[5]+$scope.cells[8] === 'OOO') {
-                            alert("O wins!");
+                        else if($scope.cells[2]+$scope.cells[5]+$scope.cells[8] === 'OOO' || $scope.cells[2]+$scope.cells[4]+$scope.cells[6] === 'OOO') {
+                            console.log("O wins!");
                         }
                     }
-                    else if ($scope.cells[3] === 'X' || $scope.cells[3] === 'O') {
+                    if ($scope.cells[3] === 'X' || $scope.cells[3] === 'O' || $scope.cells[3] === ' ') {
                         if($scope.cells[3]+$scope.cells[4]+$scope.cells[5] === 'XXX') {
-                            alert("X wins!");
+                            console.log("X wins!");
                         }
                         else if($scope.cells[3]+$scope.cells[4]+$scope.cells[5] === 'OOO') {
-                            alert("O wins!");
+                            console.log("O wins!");
                         }
                     }
-                    else if ($scope.cells[6] === 'X' || $scope.cells[6] === 'O') {
-                        if($scope.cells[6]+$scope.cells[7]+$scope.cells[8] === 'XXX' || $scope.cells[2]+$scope.cells[4]+$scope.cells[6] === 'XXX') {
-                            alert("X wins!");
+                    if ($scope.cells[6] === 'X' || $scope.cells[6] === 'O' || $scope.cells[6] === ' ') {
+                        if($scope.cells[6]+$scope.cells[7]+$scope.cells[8] === 'XXX') {
+                            console.log("X wins!");
                         }
-                        else if($scope.cells[6]+$scope.cells[7]+$scope.cells[8] === 'OOO' || $scope.cells[2]+$scope.cells[4]+$scope.cells[6] === 'OOO'){
-                            alert("O wins!");
+                        else if($scope.cells[6]+$scope.cells[7]+$scope.cells[8] === 'OOO'){
+                            ("O wins!");
                         }
                     }
             }
