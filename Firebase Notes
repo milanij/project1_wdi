@@ -1,0 +1,26 @@
+Notes from the Lecture on 04.24.14 on Firebase
+
+"Game Room" or "player room"
+     There exists a "waiting" attribute --- a boolean --- if one player is in the room waiting = true
+          once there are two players in the room, then the waiting = false
+
+create a variable or a counter to keep the rooms to two people
+
+hosted at firebase.io
+
+go to URL ---> the game is hosted elsewhere
+
+discussion of ng-show for making one person be able to see something that the other person may or may not be able to see
+
+who's turn: 1
+
+some kind of who's turn
+
+
+
+$scope.isXTurn if true => only X can play
+
+$scope.isXTurn if false => only Y can play
+
+
+
