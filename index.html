@@ -1,18 +1,19 @@
 <!doctype html>
-<html lang="en" x-ng-app>
+<html x-ng-app="TicTacApp">
 <head>
     <title>James' TicTacToe</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js
     "></script>
-    <script type="text/javascript" src=""></script>
+    <script src="https://cdn.firebase.com/v0/firebase.js"></script>
+    <script src="https://cdn.firebase.com/libs/angularfire/0.6.0/angularfire.min.js"></script>
     <script type="text/javascript" src="script.js"></script>
 </head>
 
-<body x-ng-controller="TicTacController">
+<body x-ng-controller="TicTacAppController">
     <header><span>The Original</span><br>Tic Tac Toe</header>
         <div class="container">
-            <div class="cells" x-ng-repeat="c in cells track by $index" x-ng-click="makeMove($index)">
+            <div class="cells" x-ng-repeat="c in game.cells track by $index" x-ng-click="makeMove($index)">
                 {{ c }}
             </div>
         </div>
