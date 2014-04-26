@@ -17,6 +17,7 @@ window.onload = function( ) {
 
 // Establishes a global variable for turn number.
 var turnNum = 0;
+var playerNum;
 
 // Below is the app and controller for tic tac toe.
 angular.module( "TicTacApp", ["firebase"] )
@@ -38,31 +39,43 @@ angular.module( "TicTacApp", ["firebase"] )
                             lastGame = ticTacRef.child(lastKey);
                             lastGame.set( {waiting: false, isXTurn: true, cells: [' ',' ',' ',' ',' ',' ',' ',' ',' '] } );
                             refFire = $firebase(lastGame);
+                            playerNum = 2;
                         }
                         else {
                             // A person has arrived and wants to start playing TicTacToe.
                             refFire = $firebase(ticTacRef.push( {waiting: true} ) );
+                            playerNum = 1;
                         }
                 }
                 else // I got no game :(
                 {
                             refFire = $firebase(ticTacRef.push( {waiting: true} ) );
+                            playerNum = 1;
                 }
                 refFire.$bind($scope, "game");
             }
         );
 
+        var myTurn = function( ) {
+
+            if( ( playerNum == 1 && $scope.game.isXTurn ) || ( playerNum == 2 && !$scope.game.isXTurn ) ) {
+                return true;
+            }
+            else {
+                return false;
+            }
+        };
 
             $scope.makeMove = function(u) {
-                if($scope.game.cells[u] === ' ') {
-                    $scope.game.cells[u] = $scope.isXTurn? 'X' : 'O';
-                    $scope.isXTurn = !$scope.isXTurn;
+                console.log("Im player #: " + playerNum);
+                if($scope.game.cells[u] === ' ' && myTurn( )) {
+                    $scope.game.cells[u] = $scope.game.isXTurn? 'X' : 'O';
+                    $scope.game.isXTurn = !$scope.game.isXTurn;
                     turnNum ++;
                 }
                     console.log("Turn Number " + turnNum);
                     console.log($scope.game.cells);
                     $scope.winCheck( );
-                    $scope.tieCheck( );
             };
 
             $scope.winCheck = function( ) {
