@@ -21,7 +21,7 @@ var turnNum = 0;
 // Below is the app and controller for tic tac toe.
 angular.module( "TicTacApp", ["firebase"] )
     .controller( "TicTacAppController", function( $scope, $firebase ) {
-        var ticTacRef = new Firebase("https://almost-original-ttt.firebaseio.com/games");
+        var ticTacRef = new Firebase("https://original-ttt.firebaseio.com//games");
 
         ticTacRef.once("value", function( data ) {
                 var games = data.val( ); // Get the real objects out of the angularified blob.
@@ -122,10 +122,6 @@ angular.module( "TicTacApp", ["firebase"] )
                     }
 
                 }
-            };
-
-            $scope.tieCheck = function( ) {
-                console.log("tieCheck is running.");
             };
 
 } );

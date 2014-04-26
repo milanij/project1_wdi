@@ -30,6 +30,36 @@ span {
     text-align: center;
 }
 
+    @media only screen ( max-device-width: 450px ) {
+
+        header {
+            text-align: center;
+            color: white;
+            font-size: 125px;
+            font-family: helvetica;
+        }
+
+        span {
+            font-family: cursive;
+            font-size: 80px;
+        }
+
+        .container {
+            width: 904px;
+            margin: 0 auto;
+        }
+
+        .cells {
+            background-color: #666666;
+            height:280px;
+            width:280px;
+            border:4px solid white;
+            font-size: 240px;
+            color: white;
+            float:left;
+            text-align: center;
+        }
+    }
 
 
 
